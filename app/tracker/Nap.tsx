@@ -9,7 +9,7 @@ type Props = {
   endOfDay: Date;
 };
 
-export const LongNap = ({ startOfDay, nap, endOfDay }: Props) => {
+export const Nap = ({ startOfDay, nap, endOfDay }: Props) => {
   const totalMinutes = differenceInMinutes(endOfDay, startOfDay);
   const circleStart = differenceInMinutes(nap.startDate, startOfDay);
   const circleEnd = differenceInMinutes(nap.endDate, startOfDay);
