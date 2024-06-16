@@ -3,7 +3,12 @@ export type PlannedNap = {
   endDate: Date;
 };
 
-export type DayConfiguration = {
+export type ActivityPeriod = {
+  activeTime: { minutes: number };
+  napTime?: { minutes: number };
+};
+
+export type ChildDay = {
   plannedNaps: PlannedNap[];
   startOfDay: Date;
   endOfDay: Date;

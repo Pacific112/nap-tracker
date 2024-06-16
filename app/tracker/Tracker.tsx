@@ -2,15 +2,11 @@
 
 import { StartOfDay } from "@/app/tracker/StartOfDay";
 import { EndOfDay } from "@/app/tracker/EndOfDay";
-import { DayConfiguration } from "@/app/tracker/types";
 import { TrackerBase } from "@/app/tracker/TrackerBase";
 import { Nap } from "@/app/tracker/Nap";
+import { ChildDay } from "@/app/(domain)/ChildDay";
 
-export const Tracker = ({
-  dayConfiguration,
-}: {
-  dayConfiguration: DayConfiguration;
-}) => {
+export const Tracker = ({ childDay }: { childDay: ChildDay }) => {
   return (
     <svg
       viewBox="0 0 32 32"
@@ -20,15 +16,15 @@ export const Tracker = ({
     >
       <TrackerBase />
 
-      <StartOfDay date={dayConfiguration.startOfDay} />
-      <EndOfDay date={dayConfiguration.endOfDay} />
+      <StartOfDay date={childDay.startOfDay} />
+      <EndOfDay date={childDay.endOfDay} />
 
-      {dayConfiguration.plannedNaps.map((nap, index) => (
+      {childDay.plannedNaps.map((nap, index) => (
         <Nap
           key={index}
           nap={nap}
-          startOfDay={dayConfiguration.startOfDay}
-          endOfDay={dayConfiguration.endOfDay}
+          startOfDay={childDay.startOfDay}
+          endOfDay={childDay.endOfDay}
         />
       ))}
     </svg>
