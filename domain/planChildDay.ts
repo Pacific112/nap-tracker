@@ -1,5 +1,5 @@
 import { addMinutes } from "date-fns";
-import { ActivityPeriod, ChildDay, PlannedNap } from "@/app/(domain)/ChildDay";
+import { ActivityPeriod, ChildDay, PlannedNap } from "@/domain/ChildDay";
 
 const ACTIVITY_PERIODS: ActivityPeriod[] = [
   { activeTime: { minutes: 120 }, napTime: { minutes: 30 } },

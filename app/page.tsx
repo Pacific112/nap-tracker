@@ -1,5 +1,5 @@
 import { Tracker } from "@/app/tracker/Tracker";
-import { planChildDay } from "@/app/(domain)/planChildDay";
+import { planChildDay } from "@/domain/planChildDay";
 
 const START_OF_DAY = new Date(2024, 11, 6, 8, 0);
 

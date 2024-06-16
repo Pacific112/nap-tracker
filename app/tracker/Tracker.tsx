@@ -4,7 +4,7 @@ import { StartOfDay } from "@/app/tracker/StartOfDay";
 import { EndOfDay } from "@/app/tracker/EndOfDay";
 import { TrackerBase } from "@/app/tracker/TrackerBase";
 import { Nap } from "@/app/tracker/Nap";
-import { ChildDay } from "@/app/(domain)/ChildDay";
+import { ChildDay } from "@/domain/ChildDay";
 
 export const Tracker = ({ childDay }: { childDay: ChildDay }) => {
   return (
