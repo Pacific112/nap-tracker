@@ -1,7 +1,7 @@
-import { PlannedNap } from "@/app/tracker/types";
 import { differenceInMinutes, format } from "date-fns";
 import { Label } from "@/app/tracker/Label";
 import { Arc } from "@/app/tracker/Arc";
+import { PlannedNap } from "@/domain/ChildDay";
 
 type Props = {
   nap: PlannedNap;
