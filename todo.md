@@ -1,0 +1,24 @@
+- [x] Start day
+- [ ] Display current time on Tracker
+- [ ] Display how much time until next nap
+- [ ] Start a nap
+- [ ] End a nap
+- [ ] Display how long until baby will wake up
+- [ ] List of naps below Tracker
+- [ ] Settings
+  - [ ] Set activity periods
+- [ ] Support for phase of sleep switch
+  - [ ] Display when it will happen
+  - [ ] Display timer for this
+- [ ] Night sleep mode
+- [ ] Graphs
+- [ ] Auth
+- [ ] Metrics
+- [ ] History
+- [ ] Dynamic activity periods
+  - [ ] Based on months
+  - [ ] Based on baby's sleep patterns
+- [ ] Push Notifications
+  - [ ] Notify when nap is about to end
+  - [ ] Notify when nap is about to start
+  - [ ] Notify when phase of sleep is about to switch
