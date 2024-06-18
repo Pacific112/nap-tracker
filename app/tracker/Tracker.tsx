@@ -6,6 +6,7 @@ import { TrackerBase } from "@/app/tracker/TrackerBase";
 import { Nap } from "@/app/tracker/Nap";
 import { ChildDay } from "@/domain/ChildDay";
 import { TimeIndicator } from "@/app/tracker/TimeIndicator";
+import { NextActivityInfo } from "@/app/tracker/NextActivityInfo";
 
 export const Tracker = ({ childDay }: { childDay?: ChildDay }) => {
   return (
@@ -14,10 +15,6 @@ export const Tracker = ({ childDay }: { childDay?: ChildDay }) => {
         <>
           <StartOfDay date={childDay.startOfDay} />
           <EndOfDay date={childDay.endOfDay} />
-          <TimeIndicator
-            startDate={childDay.startOfDay}
-            endDate={childDay.endOfDay}
-          />
 
           {childDay.plannedNaps.map((nap, index) => (
             <Nap
@@ -27,6 +24,11 @@ export const Tracker = ({ childDay }: { childDay?: ChildDay }) => {
               endOfDay={childDay.endOfDay}
             />
           ))}
+          <TimeIndicator
+            startDate={childDay.startOfDay}
+            endDate={childDay.endOfDay}
+          />
+          <NextActivityInfo childDay={childDay} />
         </>
       ) : null}
     </TrackerBase>

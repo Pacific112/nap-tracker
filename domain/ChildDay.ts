@@ -13,3 +13,16 @@ export type ChildDay = {
   startOfDay: Date;
   endOfDay: Date;
 };
+
+export const findCurrentNap = (childDay: ChildDay, currentDate: Date) => {
+  return childDay.plannedNaps.reduce<PlannedNap | undefined>((acc, nap) => {
+    if (nap.endDate > currentDate) {
+      if (!acc) {
+        return nap;
+      }
+      return acc.startDate < nap.startDate ? acc : nap;
+    }
+
+    return acc;
+  }, undefined);
+};

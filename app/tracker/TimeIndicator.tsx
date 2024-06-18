@@ -13,6 +13,7 @@ export const TimeIndicator = ({
   endDate: Date;
 }) => {
   const [currentTime, setCurrentTime] = useState(new Date());
+  useInterval(() => setCurrentTime(new Date()), 60 * 1000);
 
   const currentSecondsDifference = differenceInSeconds(currentTime, startDate);
   const totalDifference = differenceInSeconds(endDate, startDate);
@@ -20,10 +21,6 @@ export const TimeIndicator = ({
   const timeRotation =
     (currentSecondsDifference / totalDifference) * totalTrackerDegrees;
   const rotation = startingRotation + timeRotation;
-
-  useInterval(() => {
-    setCurrentTime(new Date());
-  }, 60 * 1000);
 
   return (
     <>

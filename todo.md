@@ -1,13 +1,16 @@
 - [x] Start day
 - [x] Display current time on Tracker
-- [ ] Display how much time until next nap
-- [ ] Start a nap
-- [ ] End a nap
-- [ ] Display how long until baby will wake up
-- [ ] List of naps below Tracker
+- [x] Display how much time until next sleep
+- [x] Display how long until baby will wake up
+- [ ] Allow to set in modal time of wake up
 - [ ] Remove DEFAULT_DAY
   - [ ] Replace it with some test mechanism (.env?)
 - [ ] Deployment to Vercel
+- [ ] PWA
+- [ ] Start a nap
+- [ ] End a nap
+- [ ] List of naps below Tracker
+- [ ] Start saving things to database
 - [ ] Improvements:
   - [ ] Make sure that TimeIndicator and Nap elements are drawed in correct place (it feels like they are not very accurate)
   - [ ] Move magic numbers to constants / methods
@@ -30,3 +33,7 @@
   - [ ] Notify when nap is about to end
   - [ ] Notify when nap is about to start
   - [ ] Notify when phase of sleep is about to switch
+- [ ] SEO
+- [ ] Tutorial
+- [ ] Support for other parent
+- [ ] Subscription / Pricing

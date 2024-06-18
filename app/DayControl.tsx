@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ChildDay } from "@/domain/ChildDay";
 import { planChildDay } from "@/domain/planChildDay";
 
-const DEFAULT_DAY = planChildDay(new Date("2024-06-17T22:00"));
+const DEFAULT_DAY = planChildDay(new Date("2024-06-18T17:27"));
 
 export const DayControl = () => {
   const [childDay, setChildDay] = useState<ChildDay>(DEFAULT_DAY);
@@ -14,14 +14,12 @@ export const DayControl = () => {
   return (
     <div className="text-center">
       <Tracker childDay={childDay} />
-      {!childDay && (
-        <Button
-          variant="secondary"
-          onClick={() => setChildDay(planChildDay(new Date()))}
-        >
-          Start your day
-        </Button>
-      )}
+      <Button
+        variant="secondary"
+        onClick={() => setChildDay(planChildDay(new Date()))}
+      >
+        Start your day
+      </Button>
     </div>
   );
 };
