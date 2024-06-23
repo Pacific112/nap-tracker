@@ -1,5 +1,5 @@
 import { format } from "date-fns";
-import { LabeledCircle } from "@/app/tracker/LabeledCircle";
+import { LabeledCircle } from "@/app/tracker/labeled-circle";
 
 type Props = {
   date: Date;

@@ -12,13 +12,22 @@
 - [ ] List of naps below Tracker
 - [ ] Start saving things to database
 - [ ] Improvements:
-  - [ ] Make sure that TimeIndicator and Nap elements are drawed in correct place (it feels like they are not very accurate)
+  - [ ] Make sure that TimeIndicator and Nap elements are drew in correct place (it feels like they are not very accurate)
   - [ ] Move magic numbers to constants / methods
+  - [ ] Improve time picker component
+  - [ ] Copies
 - [ ] Settings
   - [ ] Set activity periods
 - [ ] Support for phase of sleep switch
   - [ ] Display when it will happen
   - [ ] Display timer for this
+- [ ] Make things accessible
+  - [ ] Introduce some auto tools that will check for accessibility
+  - [ ] Is it fine to use flex-col-reverse like in update time drawer component
+- [ ] package structure
+  - [ ] move business components to `src/components`?
+  - [ ] is domain package needed?
+  - [ ] better organization in general
 - [ ] Redesign
 - [ ] Add tests
 - [ ] Night sleep mode

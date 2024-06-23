@@ -1,6 +1,6 @@
 import { differenceInMinutes, format } from "date-fns";
-import { Label } from "@/app/tracker/Label";
-import { Arc } from "@/app/tracker/Arc";
+import { Label } from "@/app/tracker/label";
+import { Arc } from "@/app/tracker/arc";
 import { PlannedNap } from "@/domain/ChildDay";
 
 type Props = {

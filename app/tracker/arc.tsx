@@ -1,4 +1,4 @@
-import { trackerConfig } from "@/app/tracker/trackerConfig";
+import { trackerConfig } from "@/app/tracker/tracker-config";
 
 const { circumference } = trackerConfig;
 
