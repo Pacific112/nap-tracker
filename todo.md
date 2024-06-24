@@ -2,13 +2,22 @@
 - [x] Display current time on Tracker
 - [x] Display how much time until next sleep
 - [x] Display how long until baby will wake up
-- [ ] Allow to set in modal time of wake up
-- [ ] Remove DEFAULT_DAY
-  - [ ] Replace it with some test mechanism (.env?)
+- [x] Allow to set in modal time of wake up
+- [x] Allow to update nap times
 - [ ] Deployment to Vercel
-- [ ] PWA
+- [ ] Development environment:
+  - [ ] Allow to force current time
+  - [ ] Allow to specify start of day
+- [ ] Improved nap algorithm:
+  - After providing actual time of wake up from a nap it has to try spread remaining activity time between naps
+  - It has to take into account current time - we cannot update something that already happened (unless used does it explicitly)
+- [ ] Introduce concept of actual nap and planned nap
+- [ ] Update of nap should not affect actual naps
 - [ ] Start a nap
 - [ ] End a nap
+- [ ] PWA
+- [ ] Option to add a nap from outside plan
+- [ ] Detection if nap is from outside plan or nap started too fast / too late / on time
 - [ ] List of naps below Tracker
 - [ ] Start saving things to database
 - [ ] Improvements:
@@ -18,16 +27,20 @@
   - [ ] Copies
 - [ ] Settings
   - [ ] Set activity periods
-- [ ] Support for phase of sleep switch
+- [ ] Support for next cycle of sleep:
   - [ ] Display when it will happen
   - [ ] Display timer for this
 - [ ] Make things accessible
-  - [ ] Introduce some auto tools that will check for accessibility
+  - [ ] Introduce some tools that will check for accessibility
   - [ ] Is it fine to use flex-col-reverse like in update time drawer component
+  - [ ] tabindex, keyboard navigation etc.
 - [ ] package structure
   - [ ] move business components to `src/components`?
   - [ ] is domain package needed?
   - [ ] better organization in general
+- [ ] Tooling
+  - [ ] Turbo?
+  - [ ] Some package manager?
 - [ ] Redesign
 - [ ] Add tests
 - [ ] Night sleep mode
@@ -43,6 +56,7 @@
   - [ ] Notify when nap is about to start
   - [ ] Notify when phase of sleep is about to switch
 - [ ] SEO
+- [ ] Ask AI to propose sleep schedule
 - [ ] Tutorial
 - [ ] Support for other parent
 - [ ] Subscription / Pricing

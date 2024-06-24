@@ -7,9 +7,10 @@ type Props = {
   nap: PlannedNap;
   startOfDay: Date;
   endOfDay: Date;
+  onClick?: () => void;
 };
 
-export const Nap = ({ startOfDay, nap, endOfDay }: Props) => {
+export const Nap = ({ startOfDay, nap, endOfDay, onClick }: Props) => {
   const totalMinutes = differenceInMinutes(endOfDay, startOfDay);
   const circleStart = differenceInMinutes(nap.startDate, startOfDay);
   const circleEnd = differenceInMinutes(nap.endDate, startOfDay);
@@ -26,7 +27,11 @@ export const Nap = ({ startOfDay, nap, endOfDay }: Props) => {
 
   return (
     <>
-      <Arc startingPoint={startingPoint} endingPoint={endingPoint} />
+      <Arc
+        startingPoint={startingPoint}
+        endingPoint={endingPoint}
+        onClick={onClick}
+      />
 
       <Label x={14} y={6} transform={`rotate(${startLabelPosition}, 16, 16)`}>
         {format(nap.startDate, "HH:mm")}

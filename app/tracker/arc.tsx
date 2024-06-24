@@ -5,9 +5,11 @@ const { circumference } = trackerConfig;
 export const Arc = ({
   startingPoint,
   endingPoint,
+  onClick,
 }: {
   startingPoint: number;
   endingPoint: number;
+  onClick?: () => void;
 }) => {
   // how much
   // 0.8 - 80% of the circle. But I think it should be based on end of day somehow
@@ -15,6 +17,7 @@ export const Arc = ({
 
   return (
     <circle
+      onClick={onClick}
       cx="16"
       cy="16"
       r={trackerConfig.radius}
@@ -26,7 +29,7 @@ export const Arc = ({
         startingPoint * 0.8 * circumference
       }
       strokeLinecap="round"
-      className="h-full stroke-blue-300 transition-all !duration-500"
+      className="h-full stroke-blue-300 transition-all !duration-500 cursor-pointer"
     ></circle>
   );
 };

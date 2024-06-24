@@ -42,35 +42,35 @@ import {
 } from "@/components/ui/form";
 import { format, parse } from "date-fns";
 import { useState } from "react";
+import { PlannedNap } from "@/domain/ChildDay";
 
 type Props = {
   children: React.ReactNode;
-  onStartOfDayChanged: (newStartOfDate: Date) => void;
-  currentTime: Date;
+  onNapUpdated: (data: { startDate: Date; endDate: Date }) => void;
+  nap: PlannedNap;
 };
 
-const startOfDaySchema = z.object({
-  newTime: z.string(),
+const napTimeSchema = z.object({
+  startTime: z.string(),
+  endTime: z.string(),
 });
 
-type UpdateStartOfDaySchema = z.infer<typeof startOfDaySchema>;
+type NapTimeSchema = z.infer<typeof napTimeSchema>;
 
-export const UpdateStartOfDayDrawer = ({
-  children,
-  onStartOfDayChanged,
-  currentTime,
-}: Props) => {
+export const UpdateNapDrawer = ({ children, onNapUpdated, nap }: Props) => {
   const [open, setOpen] = useState(false);
-  const form = useForm<UpdateStartOfDaySchema>({
-    resolver: zodResolver(startOfDaySchema),
+  const form = useForm<NapTimeSchema>({
+    resolver: zodResolver(napTimeSchema),
     defaultValues: {
-      newTime: format(currentTime, "HH:mm"),
+      startTime: format(nap.startDate, "HH:mm"),
+      endTime: format(nap.endDate, "HH:mm"),
     },
   });
 
-  const onSubmit = (e: UpdateStartOfDaySchema) => {
-    const dateTime = parse(e.newTime, "HH:mm", new Date());
-    onStartOfDayChanged(dateTime);
+  const onSubmit = (e: NapTimeSchema) => {
+    const startDate = parse(e.startTime, "HH:mm", new Date());
+    const endDate = parse(e.endTime, "HH:mm", new Date());
+    onNapUpdated({ startDate, endDate });
     setOpen(false);
   };
 
@@ -79,9 +79,9 @@ export const UpdateStartOfDayDrawer = ({
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className="sm:max-w-[420px]">
         <DialogHeader>
-          <DialogTitle>Change Start Time</DialogTitle>
+          <DialogTitle>Update Nap Times</DialogTitle>
           <DialogDescription>
-            Select a new start time for your day.
+            Select new start and end times for the nap.
           </DialogDescription>
         </DialogHeader>
         <Form {...form}>
@@ -89,10 +89,27 @@ export const UpdateStartOfDayDrawer = ({
             <div className="grid gap-6 py-6">
               <FormField
                 control={form.control}
-                name="newTime"
+                name="startTime"
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel htmlFor="newTime">New Start Time</FormLabel>
+                    <FormControl>
+                      <Input
+                        type="time"
+                        className="flex items-center justify-between w-full"
+                        {...field}
+                      ></Input>
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              ></FormField>
+              <FormField
+                control={form.control}
+                name="endTime"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel htmlFor="newTime">New End Time</FormLabel>
                     <FormControl>
                       <Input
                         type="time"
